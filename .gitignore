@@ -90,3 +90,10 @@ fabric.properties
 !.idea/runConfigurations
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij+all
+
+
+##INFRAESTRUCTURE
+infrastructure/vm/iso/*
+infrastructure/docker/volumes/mysql/*
+infrastructure/docker/volumes/postgres/*
+infrastructure/docker/volumes/nexus/*
