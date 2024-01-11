@@ -92,8 +92,14 @@ fabric.properties
 # End of https://www.toptal.com/developers/gitignore/api/intellij+all
 
 
-##INFRAESTRUCTURE
 infrastructure/vm/iso/*
+
+## INFRAESTRUCTURE - VOLUMES
 infrastructure/docker/volumes/mysql/*
 infrastructure/docker/volumes/postgres/*
 infrastructure/docker/volumes/nexus/*
+infrastructure/docker/volumes/redis/*
+
+## REDIS
+
+infrastructure/docker/docker-compose-old.yml
