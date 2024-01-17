@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  nest-app:
+    build:
+      context: .
+      target: ${STAGE}
+      dockerfile: Dockerfile
+    image: nest-app
+    container_name: nest-app
+    ports:
+      - ${PORT}:${PORT}
+    networks:
+      - bacsystem-proxy
+
+    environment:
+      - APP_VERSION=${APP_VERSION}
+      - STAGE=${STAGE}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - PORT=${PORT}
+      - HOST_API=${HOST_API}
+
+networks:
+  bacsystem-proxy:
+     name: docker_bacsystem
+     external: true

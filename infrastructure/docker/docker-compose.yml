@@ -10,9 +10,23 @@ services:
       - "6379:6379"
       - "8001:8001"
     volumes:
-      - /volumes/redis:/data
+      - ./volumes/redis:/data
     networks:
       - bacsystem
+
+  postgres-dev:
+    container_name: postgres-db
+    image: postgres:latest
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./volumes/postgres:/var/lib/postgresql/data
+    networks:
+      - bacsystem
+
 
 networks:
   bacsystem:

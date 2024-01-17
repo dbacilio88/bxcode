@@ -102,4 +102,4 @@ infrastructure/docker/volumes/redis/*
 
 ## REDIS
 
-infrastructure/docker/docker-compose-old.yml
+infrastructure/docker/docker-compose-old

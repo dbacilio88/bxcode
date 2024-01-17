@@ -1,0 +1,1 @@
+export { PersonMapper } from "./person.mapper";
