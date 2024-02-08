@@ -1,0 +1,29 @@
+{
+  "headers": [
+    {
+      "name": "NOMBRES"
+    },
+    {
+      "name": "APELLIDOS"
+    },
+    {
+      "name": "EDAD"
+    },
+    {
+      "name": "FECHA NACIMIENTO"
+    }
+  ],
+  "persons": [
+    {
+      "name": "David bacilio de la cyrz",
+      "lastname": "De la Cruz ssssssssssssssssssssssssssssssssss",
+      "age": 19
+    },
+    {
+      "name": "Christianssssssssssssssssssss",
+      "lastname": "Baciliossssssssssssssssssssssss",
+      "age": 35
+    }
+  ],
+  "document": "P"
+}

@@ -1,0 +1,49 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: Git Semantic Version
+      uses: PaulHatch/semantic-version@v4.0.3
+      with:
+        major_pattern: "major:"
+        minor_pattern: "feat:"
+        format: "v${major}.${minor}.${patch}-prerelease${increment}"
+      id: version
+      
+    - name: Docker Login
+      env: 
+        DOCKER_HUB_USER: ${{ secrets.DOCKER_HUB_USER }}
+        DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}        
+      run: |
+        echo "Iniciando Login"
+        docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASSWORD
+        echo "Fin del Login"        
+    - name: Build Docker Image
+      env:
+        NEW_VERSION: ${{ steps.version.outputs.version }}
+      run: |
+        docker build -t dbacilio88/node-mongo-redis-bq:$NEW_VERSION .
+        docker build -t dbacilio88/node-mongo-redis-bq .
+    - name: Push Docker Image
+      env:
+        NEW_VERSION: ${{ steps.version.outputs.version }}
+      run: |
+        echo "New version: $NEW_VERSION"
+        docker push dbacilio88/node-mongo-redis-bq:$NEW_VERSION
+        docker push dbacilio88/node-mongo-redis-bq

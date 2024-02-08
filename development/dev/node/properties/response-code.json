@@ -1,0 +1,44 @@
+[
+    {
+        "code": "000",
+        "responseCode": "200.xx.000",
+        "responseMessage": "Process Ok",
+        "responseHttpCode": 200
+    },
+	{
+        "code": "001",
+        "responseCode": "404.xx.001",
+        "responseMessage": "The document id not exist",
+        "responseHttpCode": 404
+    },
+	{
+        "code": "002",
+        "responseCode": "404.xx.002",
+        "responseMessage": "The document uuid not exist",
+        "responseHttpCode": 404
+    },
+	{
+        "code": "003",
+        "responseCode": "400.xx.003",
+        "responseMessage": "The document id is invalid",
+        "responseHttpCode": 400
+    },
+	{
+        "code": "004",
+        "responseCode": "400.xx.004",
+        "responseMessage": "The document uuid is invalid",
+        "responseHttpCode": 400
+    },
+	{
+        "code": "005",
+        "responseCode": "400.xx.005",
+        "responseMessage": "The person document exist",
+        "responseHttpCode": 400
+    },
+	{
+        "code": "999",
+        "responseCode": "500.xx.999",
+        "responseMessage": "Internal Server Error",
+        "responseHttpCode": 500
+    }
+]
